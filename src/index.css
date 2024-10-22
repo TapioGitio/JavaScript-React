@@ -19,6 +19,7 @@
   --container-padding: 1rem;
   --transition-time: all 0.2s;
 }
+
 html {
 
   color-scheme: light;
@@ -124,23 +125,24 @@ a:hover {
   cursor: pointer;
 
   &:hover {
-      color: var(--clr-gray500);
-  }
-
-  .btn-primary {
-    background-color: var(--clr-primary);
-    color: var(--clr-white);
-    border-radius: 8px;
-    padding: 12px 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-
-    transition: background-color .2s;
-
-
+    color: var(--clr-gray500);
 }
+}
+
+
+.btn-primary {
+background-color: var(--clr-primary);
+color: var(--clr-white);
+border-radius: 8px;
+padding: 12px 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: none;
+
+transition: background-color .2s;
+}
+
 .btn-primary:hover {
     background-color: var(--clr-gray700);
     color: var(--clr-white);
@@ -368,7 +370,7 @@ a:hover {
     text-decoration: none;
 }
 
-}
+
 .navbar {
   display: none;
 

@@ -10,6 +10,7 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import NewsLetter from './components/NewsLetter'
 import Footer from './components/Footer'
+import './index.css'
 
 
 
