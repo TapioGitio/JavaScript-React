@@ -1,6 +1,9 @@
 import React from 'react'
+import Darkmode from './Darkmode'
 
-function Header() {
+function Header({DarkTheme, toggleDark}) {
+
+
   return (
     <header>
         <div className="container">
@@ -13,12 +16,8 @@ function Header() {
                 
             </nav>
 
-            <div className="btn-toggle-switch">
-                <span className="label">Dark Mode</span>
-                <label htmlFor="darkmode-switch" className="toggle-switch">
-                    <input id="darkmode-switch" type="checkbox"/>
-                    <span className="slider round"></span>
-                </label>
+            <div>
+                <Darkmode DarkTheme={DarkTheme} toggleDark={toggleDark}/>
             </div>
 
             <a id="auth-signin" href="#" className="btn-primary">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import MainSection from './components/MainSection'
 import Brands from './components/Brands'
@@ -15,10 +15,27 @@ import './index.css'
 
 
 function App() {
+
+  const [DarkTheme, setDarkTheme] = useState(false)
+  const toggleDark = () => {
+    setDarkTheme(theme => !theme)
+  }
+
+  useEffect(() => {
+    const htmlElement= document.documentElement;
+    if(DarkTheme) {
+      htmlElement.classList.add('dark')
+      htmlElement.style.colorScheme = 'dark'
+    } else {
+      htmlElement.classList.remove('dark')
+      htmlElement.style.colorScheme = 'light'
+    }
+  }, [DarkTheme])
+
   return (
     <>
     <nav>
-        <Header/>
+        <Header DarkTheme={DarkTheme} toggleDark={toggleDark}/>
     </nav>
     <main>
         <MainSection/>
