@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function NewsLetter() {
 
     const [email, setEmail] = useState('')
-    const [error, setError] = useState(null)
+    const [error, setError] = useState(false)
 
     const handleSubmit = (e) => {
 
@@ -17,7 +17,7 @@ function NewsLetter() {
 
     const handleChange = (e) => {
         setEmail(e.target.value)
-        setError(null)
+        setError(false)
     }   
 
   return (
