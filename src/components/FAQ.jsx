@@ -1,4 +1,5 @@
 import React from 'react'
+import FAQitems from './FAQitems'
 
 function FAQ() {
   return (
@@ -35,72 +36,7 @@ function FAQ() {
             </div>
             <div className="rightside">
 
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>Is any of my personal information stored in the App?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>What formats can I download my transaction history in?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>Can I schedule future transfers?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>When can I use Banking App services?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>Can I create my own password that is easy for me to remember?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
-                <div className="acc-border">
-                    <div className="accordion">
-                        <span>What happens if I forget or lose my password?</span>
-                        <button className="btn-drop-up">
-                            <i className="fa-solid fa-chevron-up"></i>
-                        </button>
-                    </div>
-                    <div className="panel">
-                        <p>Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.</p>
-                    </div>
-                </div>
+                <FAQitems />
             </div>
         </div>
         
