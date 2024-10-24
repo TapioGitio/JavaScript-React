@@ -1,29 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
+import BrandItem from './BrandItem'
+
 
 function Brands() {
+
+
+    const [brandItems, setBrandItems] = useState([
+        { id: 'brand-1', logo: './images/logo-icon-1.svg', altText: 'Logo ipsum logo 1'},
+        { id: 'brand-2', logo: './images/logo-icon-2.svg', altText: 'Logo ipsum logo 2'},
+        { id: 'brand-3', logo: './images/logo-icon-3.svg', altText: 'Logo ipsum logo 3'},
+        { id: 'brand-4', logo: './images/logo-icon-4.svg', altText: 'Logo ipsum logo 4'},
+        { id: 'brand-5', logo: './images/logo-icon-5.svg', altText: 'Logo ipsum logo 5'},
+        { id: 'brand-6', logo: './images/logo-icon-6.svg', altText: 'Logo ipsum logo 6'},
+    ])
+
   return (
     <section id="brands">
-    <div className="container">
-        <div id="brand-1" className="brand-box">
-            <img src="./images/logo-icon-1.svg" alt="Logo ipsum logo"/>
+        <div className="container">
+            {brandItems.map((brand, index) => (
+                <BrandItem key={index} item={brand} />
+            ))}
         </div>
-        <div id="brand-2" className="brand-box">
-            <img src="./images/logo-icon-2.svg" alt="Logo ipsum logo"/>
-        </div>
-        <div id="brand-3" className="brand-box">
-            <img src="./images/logo-icon-3.svg" alt="Logo ipsum logo"/>
-        </div>
-        <div id="brand-4" className="brand-box">
-            <img src="./images/logo-icon-4.svg" alt="Logo ipsum logo"/>
-        </div>
-        <div id="brand-5" className="brand-box">
-            <img src="./images/logo-icon-5.svg" alt="Logo ipsum logo"/>
-        </div>
-        <div id="brand-6" className="brand-box">
-            <img src="./images/logo-icon-6.svg" alt="Logo ipsum logo"/>
-        </div>
-    </div>
-</section>
+    </section>
   )
 }
 
