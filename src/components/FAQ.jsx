@@ -1,7 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import FAQitems from './FAQitems'
 
 function FAQ() {
+
+
+
+const [storeFaq, setStoreFaq] = useState([])
+const [error, setError] = useState(null)
+
+
+useEffect(() => {
+
+
+    const getFaqInfo = async () => {
+
+        try{
+            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/faq')
+
+            if(!res.ok) {
+                throw new Error ('Failed to get the FAQ info') 
+            }
+
+            const data = await res.json()
+            setStoreFaq(data)
+        } catch(error) {
+            setError(`Could not retrieve the data: ${error.message}`)
+        }
+    }
+
+    getFaqInfo()
+}, [])
+
+
+
   return (
     <section className="faq">
         <div className="container">
@@ -36,7 +67,10 @@ function FAQ() {
             </div>
             <div className="rightside">
 
-                <FAQitems />
+                {storeFaq.map(item => (
+                    <FAQitems key={item.id} item={item} />
+                ))}
+                
             </div>
         </div>
         
