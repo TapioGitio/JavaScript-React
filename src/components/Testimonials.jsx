@@ -1,6 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import TestimonialsItem from './TestimonialsItem'
 
 function Testimonials() {
+
+const [testimonials, setTestimonials] = useState([])
+const [error, setError] = useState(null)
+
+
+useEffect(() => {
+    
+    const getTestamonials = async () => {
+
+        try {
+            const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials') 
+
+            if(!res.ok) {
+                throw new Error("Failed to get the testimonial");
+            }
+
+            const data = await res.json()
+            setTestimonials(data)
+        } catch (error) {
+            setError(`Error loading the testimonials: ${error.message}`)
+        }
+    }
+
+    getTestamonials()
+}, [])
+
+
+
+
   return (
     <section className="review">
         <div className="container">
@@ -9,56 +39,9 @@ function Testimonials() {
                 <h2>Clients are <br/> Loving Our App</h2>
             </div>
 
-            <div className="rev-container">
-                <div className="quotes">
-                    <img src="./images/quotes-icon.svg" alt=""/>
-                </div>
-                <div className="img-container">
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/greystar-icon.svg" alt=""/>
-                </div>
-
-                <div className="rev-text">
-                    <p>Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.</p>
-                </div>
-
-                <div className="rev-fan">
-                    <img src="./images/girl-icon.svg" alt=""/>
-                    <div className="rev-name">
-                        <p className="rev-1">Fannie Summers</p>
-                        <p className="rev-2">Designer</p>
-                    </div>
-                </div>
-
-            </div>
-            <div className="rev-container">
-                <div className="quotes">
-                    <img src="./images/quotes-icon.svg" alt=""/>
-                </div>
-                <div className="img-container">
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                    <img src="images/star-icon.svg" alt=""/>
-                </div>
-
-                <div className="rev-text">
-                    <p>Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.</p>
-                </div>
-
-                <div className="rev-fan">
-                    <img src="./images/boy-icon.svg" alt=""/>
-                    <div className="rev-name">
-                        <p className="rev-1">Albert Flores</p>
-                        <p className="rev-2">Developer</p>
-                    </div>
-                </div>
-
-            </div>
+            {testimonials.map(item => (
+                <TestimonialsItem key={item.id} item={item} />
+            ))}
 
 
         </div>
