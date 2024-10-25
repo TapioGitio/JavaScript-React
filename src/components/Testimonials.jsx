@@ -3,7 +3,7 @@ import TestimonialsItem from './TestimonialsItem'
 
 function Testimonials() {
 
-const [testimonials, setTestimonials] = useState([])
+const [storeTestimonials, setStoreTestimonials] = useState([])
 const [error, setError] = useState(null)
 
 
@@ -19,7 +19,7 @@ useEffect(() => {
             }
 
             const data = await res.json()
-            setTestimonials(data)
+            setStoreTestimonials(data)
         } catch (error) {
             setError(`Error loading the testimonials: ${error.message}`)
         }
@@ -39,7 +39,7 @@ useEffect(() => {
                 <h2>Clients are <br/> Loving Our App</h2>
             </div>
 
-            {testimonials.map(item => (
+            {storeTestimonials.map(item => (
                 <TestimonialsItem key={item.id} item={item} />
             ))}
 
