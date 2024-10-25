@@ -4,7 +4,8 @@ function MainSection() {
   return (
     <section className="main">
         <div className="grid-container container">
-
+            
+            
             <div className="title flex">
                 <h1>Manage All Your Money in One App</h1>
             </div>

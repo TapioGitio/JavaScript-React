@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
-import MainSection from './components/MainSection'
-import Brands from './components/Brands'
-import Features from './components/Features'
-import Carousel from './components/Carousel'
-import ShowCase from './components/ShowCase'
-import Testimonials from './components/Testimonials'
-import FAQ from './components/FAQ'
-import Contact from './components/Contact'
-import NewsLetter from './components/NewsLetter'
 import Footer from './components/Footer'
 import './index.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Contacts from './pages/Contacts'
 
 
 
@@ -33,25 +27,20 @@ function App() {
   }, [DarkTheme])
 
   return (
-    <>
-    <nav>
-        <Header DarkTheme={DarkTheme} toggleDark={toggleDark}/>
-    </nav>
-    <main>
-        <MainSection/>
-        <Brands/>
-        <Features/>
-        <Carousel/>
-        <ShowCase/>
-        <Testimonials/>
-        <FAQ/>
-        <Contact/>
-        <NewsLetter/>
-    </main>
-    <footer>
-        <Footer/>
-    </footer>
-    </>
+    <BrowserRouter>
+      <nav>
+          <Header DarkTheme={DarkTheme} toggleDark={toggleDark}/>
+      </nav>
+        <main>
+          <Routes>
+            <Route path='/' element={<Home />}></Route>  
+            <Route path='/contacts' element={<Contacts />}></Route>  
+          </Routes> 
+        </main>
+      <footer>
+          <Footer/>
+      </footer>
+    </BrowserRouter>
   )
 }
 

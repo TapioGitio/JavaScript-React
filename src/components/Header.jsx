@@ -1,5 +1,6 @@
 import React from 'react'
 import Darkmode from './Darkmode'
+import { Link, NavLink} from 'react-router-dom'
 
 function Header({DarkTheme, toggleDark}) {
 
@@ -8,11 +9,11 @@ function Header({DarkTheme, toggleDark}) {
     <header>
         <div className="container">
 
-            <a id="logo" href="index.html"><img src="images/silicon-icon.svg" alt="Silicon logo" /></a>
+            <Link id="logo" to={'/'}><img src="images/silicon-icon.svg" alt="Silicon logo" /></Link>
 
             <nav className="navbar">
                 <a className="nav-link" href="#ft">Features</a>
-                <a className="nav-link" href="contact.html">Contact</a>
+                <NavLink className="nav-link" to={'/contacts'}>Contact</NavLink>
                 
             </nav>
 
