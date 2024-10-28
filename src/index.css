@@ -750,6 +750,8 @@ header .container {
   border: none;
   display: none;
   overflow: hidden;
+  transition: max-height .3s ease;
+  max-height: 0;
 
 }
 
