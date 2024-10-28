@@ -79,8 +79,6 @@ input, button, label {
   align-items: center;
 }
 
-
-
 .container {
   width: 100%;
   padding-left: var(--container-padding);
@@ -97,6 +95,10 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2.5rem;
+}
+
+li {
+    list-style: none;
 }
 
 a {
@@ -282,6 +284,7 @@ transition: background-color .2s;
     transform: rotate(180deg);
     background-color: var(--clr-primary);
     color: var(--clr-white);
+    
 }
 
 
@@ -382,8 +385,39 @@ transition: background-color .2s;
 
 }
 
+
 #auth-signin {
-  display: none;
+    display: none;
+}
+
+.sidebar {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background:rgba(253, 253, 253, 0.562);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 10px #33333331;
+    border-radius: 10px;
+    
+}
+
+.sidebar li {
+    padding: .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.btn-primary {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar.open {
+    display: block;
 }
 
 header .container {
@@ -892,6 +926,7 @@ footer {
 
   .container {
       max-width: 720px;
+      position: relative;
 
   }
 
@@ -1057,6 +1092,7 @@ footer {
 
   .container {
       max-width: 1320px;
+      position: relative;
 
   }
 

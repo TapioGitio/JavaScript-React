@@ -37,6 +37,8 @@ useEffect(() => {
 
 
 
+
+
   return (
     <section className="faq">
         <div className="container">
@@ -71,6 +73,7 @@ useEffect(() => {
             </div>
             <div className="rightside">
 
+                {error && <div> {error}</div>}
                 {storeFaq.map(item => (
                     <FAQitems key={item.id} item={item} isOpen={openItemId === item.id} onToggle={() => togglePanel(item.id)} />
                 ))}

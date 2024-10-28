@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './index.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import './index.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Contacts from './pages/Contacts'
 

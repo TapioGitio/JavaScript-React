@@ -39,6 +39,7 @@ useEffect(() => {
                 <h2>Clients are <br/> Loving Our App</h2>
             </div>
 
+            {error && <div>{error}</div>}
             {storeTestimonials.map(item => (
                 <TestimonialsItem key={item.id} item={item} />
             ))}
