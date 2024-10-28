@@ -4,10 +4,14 @@ import FAQitems from './FAQitems'
 function FAQ() {
 
 
-
+const [openItemId, setopenItemId ] = useState(null)
 const [storeFaq, setStoreFaq] = useState([])
 const [error, setError] = useState(null)
 
+
+const togglePanel = (id) => {
+    setopenItemId(prevId => (prevId === id ? null : id))
+}
 
 useEffect(() => {
 
@@ -68,7 +72,7 @@ useEffect(() => {
             <div className="rightside">
 
                 {storeFaq.map(item => (
-                    <FAQitems key={item.id} item={item} />
+                    <FAQitems key={item.id} item={item} isOpen={openItemId === item.id} onToggle={() => togglePanel(item.id)} />
                 ))}
                 
             </div>
