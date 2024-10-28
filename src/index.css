@@ -80,6 +80,7 @@ input, button, label {
 }
 
 
+
 .container {
   width: 100%;
   padding-left: var(--container-padding);
@@ -730,6 +731,7 @@ header .container {
   font-size: 1rem;
   font-weight: 600;
   padding: 1rem;
+  cursor: pointer;
 
   width: 100%;
   text-align: left;
@@ -750,6 +752,11 @@ header .container {
   overflow: hidden;
 
 }
+
+.panel.open {
+    display: block;
+    max-height: 100vh;
+  }
 
 #contact-container {
   width: 100%;

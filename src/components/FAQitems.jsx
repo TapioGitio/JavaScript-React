@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FAQbutton from './FAQbutton'
 
 const FAQitems = ({item}) => {
 
+  const [isOpen, setIsOpen] = useState(false)
 
-
+  const togglePanel = () => {
+    setIsOpen(expanded => !expanded)
+  }
 
   return (
     <div className="acc-border">
-        <div className="accordion">
+        <div onClick={togglePanel} className="accordion">
             <span>{item.title}</span>
-            <FAQbutton />
+            <FAQbutton isOpen={isOpen} />
         </div>
-        <div className="panel">
+        <div className={`panel  ${isOpen ? 'open' : ''}`}>
             <p>{item.content}</p>
         </div>
     </div>
