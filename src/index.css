@@ -68,8 +68,11 @@ input, button, label {
   font: inherit
 }
 
-small {
+.error {
     color: firebrick;
+}
+.success {
+    color: rgb(34, 178, 70);
 }
 
 .txt-center {
