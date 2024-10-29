@@ -12,6 +12,10 @@ const toggleNavbar = () => {
     setIsOpen(!isOpen)
 }
 
+const handleSidebarClose = () => {
+
+    setIsOpen(false)
+}
 
   return (
     <header>
@@ -39,7 +43,7 @@ const toggleNavbar = () => {
             </button>
 
             <div>
-                <SideBar isOpen={isOpen} />
+                <SideBar isOpen={isOpen} handleSidebarClose={handleSidebarClose} />
             </div>
         </div>
     </header>

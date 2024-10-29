@@ -3,35 +3,49 @@ import { validateEmail } from './Regex'
 
 function NewsLetter() {
 
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState({ email: '' })
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
 
         e.preventDefault()
 
+        setSuccess('')
 
-        if(!email) {
+
+        if(!email.email) {
             setError('Please write your email-address')
             return
         } 
-        if(!validateEmail.test(email)){
+        if(!validateEmail.test(email.email)){
             setError('Please check your spelling, incorrect format')
             return
         }
 
 
-        console.log('Email sent:', email)
-        setEmail('')
-        setError('')
-        setSuccess('Thank you for subscribing!')
+        const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(email)
+        })
+
+        if(res.ok) {
+            console.log('Email sent:', email.email)
+            setSuccess('Thank you for subscribing!')
+            setError('')
+            setEmail({ email: '' })
+        }
+
 
     }
 
     const handleChange = (e) => {
         
-        setEmail(e.target.value)
+        const { name, value } = e.target
+        setEmail({[name]: value})
         setError('')
     }   
 
@@ -56,7 +70,7 @@ function NewsLetter() {
 
             <div className="container">                   
                 <form className="email-form" onSubmit={handleSubmit} noValidate>
-                    <input onChange={handleChange} value={email} className="form-input" type="email" name="email" id="email" required placeholder ="Your email" />
+                    <input onChange={handleChange} value={email.email} className="form-input" type="email" name="email" id="email" required placeholder ="Your email" />
                     <button type="submit" className="btn-sub">Subscribe</button>
                 </form>
             </div>
