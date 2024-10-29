@@ -31,16 +31,15 @@ function NewsLetter() {
                     <h2>Subscribe to our
                     newsletter </h2>
                     {
-                        error && <small style={{ color: 'red'}}>{error}</small>
+                        error && <small>{error}</small>
                     }
                 </div>
             </div>
 
             <div className="container">                   
-                <form className="email-form" onSubmit={handleSubmit}>
-                    <input onChange={handleChange} value={email} className="form-input" type="email" name="email" id="email"  placeholder ="Your email" />
+                <form className="email-form" onSubmit={handleSubmit} noValidate>
+                    <input onChange={handleChange} value={email} className="form-input" type="email" name="email" id="email" placeholder ="Your email"/>
                     <button type="submit" className="btn-sub">Subscribe</button>
-                   
                 </form>
             </div>
 

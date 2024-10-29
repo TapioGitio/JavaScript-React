@@ -68,6 +68,10 @@ input, button, label {
   font: inherit
 }
 
+small {
+    color: firebrick;
+}
+
 .txt-center {
   text-align: center;
 }
