@@ -14,7 +14,7 @@ function NewsLetter() {
         setSuccess('')
 
 
-        if(!email.email) {
+        if(email.email.trim() === '') {
             setError('Please write your email-address')
             return
         } 
@@ -37,6 +37,9 @@ function NewsLetter() {
             setSuccess('Thank you for subscribing!')
             setError('')
             setEmail({ email: '' })
+        } else {
+            const errorResp = await res.json()
+            setError(`Encountered an error posting the email: ${errorResp.message}`)
         }
 
 
@@ -45,7 +48,7 @@ function NewsLetter() {
     const handleChange = (e) => {
         
         const { name, value } = e.target
-        setEmail({[name]: value})
+        setEmail({...email, [name]: value})
         setError('')
     }   
 
