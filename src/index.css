@@ -503,6 +503,7 @@ header .container {
       background-color: var(--clr-bg-white);
       border-radius: .8rem;
       box-shadow: 0 0 10px #3333333a;
+      overflow: hidden;
 
       h3 {
           font-size: 2rem;
