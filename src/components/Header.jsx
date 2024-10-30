@@ -9,7 +9,9 @@ const [DarkTheme, setDarkTheme] = useState(false)
 const [isOpen, setIsOpen] = useState(false)
 
 useEffect(() => {
+    
   const htmlElement= document.documentElement;
+
   if(DarkTheme) {
     htmlElement.classList.add('dark')
     htmlElement.style.colorScheme = 'dark'
