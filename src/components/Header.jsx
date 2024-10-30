@@ -1,21 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Darkmode from './Darkmode'
 import { Link, NavLink} from 'react-router-dom'
 import SideBar from './SideBar'
 
-function Header({DarkTheme, toggleDark}) {
+function Header() {
 
-
+const [DarkTheme, setDarkTheme] = useState(false)
 const [isOpen, setIsOpen] = useState(false)
 
-const toggleNavbar = () => {
+useEffect(() => {
+  const htmlElement= document.documentElement;
+  if(DarkTheme) {
+    htmlElement.classList.add('dark')
+    htmlElement.style.colorScheme = 'dark'
+  } else {
+    htmlElement.classList.remove('dark')
+    htmlElement.style.colorScheme = 'light'
+  }
+}, [DarkTheme])
+
+const toggleDark = () => {
+    setDarkTheme(theme => !theme)
+}
+
+const toggleSidebar = () => {
     setIsOpen(!isOpen)
 }
 
 const handleSidebarClose = () => {
-
     setIsOpen(false)
 }
+
 
   return (
     <header>
@@ -38,7 +53,7 @@ const handleSidebarClose = () => {
                 <span>Sign-in / up</span>
             </a>
 
-            <button onClick={toggleNavbar} className="btn-mobile">
+            <button onClick={toggleSidebar} className="btn-mobile">
                 <i className="fa-regular fa-bars"></i>
             </button>
 

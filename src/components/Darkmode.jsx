@@ -3,8 +3,6 @@ import React from 'react'
 function Darkmode({DarkTheme, toggleDark}) {
 
 
-
-
   return (
     <div className="btn-toggle-switch">
         <span className="label">Dark Mode</span>

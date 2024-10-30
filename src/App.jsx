@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import Header from './components/Header'
@@ -10,26 +10,10 @@ import Contacts from './pages/Contacts'
 
 function App() {
 
-  const [DarkTheme, setDarkTheme] = useState(false)
-  const toggleDark = () => {
-    setDarkTheme(theme => !theme)
-  }
-
-  useEffect(() => {
-    const htmlElement= document.documentElement;
-    if(DarkTheme) {
-      htmlElement.classList.add('dark')
-      htmlElement.style.colorScheme = 'dark'
-    } else {
-      htmlElement.classList.remove('dark')
-      htmlElement.style.colorScheme = 'light'
-    }
-  }, [DarkTheme])
-
   return (
     <BrowserRouter>
       <nav>
-          <Header DarkTheme={DarkTheme} toggleDark={toggleDark}/>
+          <Header/>
       </nav>
         <main>
           <Routes>
