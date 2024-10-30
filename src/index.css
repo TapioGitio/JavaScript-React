@@ -68,6 +68,10 @@ input, button, label {
   font: inherit
 }
 
+option {
+    color: var(--clr-gray700);
+}
+
 .error {
     color: firebrick;
 }
