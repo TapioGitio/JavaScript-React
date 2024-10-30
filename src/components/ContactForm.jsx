@@ -24,6 +24,7 @@ const ContactForm = () => {
       }
 
       if(!validateEmail.test(contactFormData.email)) {
+        setErrors({})
         setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
       }
@@ -39,6 +40,7 @@ const ContactForm = () => {
       if(res.ok) {
         setSuccess(true)
         setContactFormData({ fullName: "", email: "", specialist: ""})
+        setErrors({})
       } 
       
 
@@ -53,13 +55,6 @@ const ContactForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target
     setContactFormData({...contactFormData, [name]: value})
-
-    if(value.trim() === '') {
-
-      setErrors(prevErrors => ({...prevErrors, [name]: `Please enter your ${name}.`}))
-    } else {
-      setErrors(prevErrors => ({...prevErrors, [name]: ''}))
-    }
 
   }
 
@@ -92,7 +87,7 @@ const ContactForm = () => {
         </div>
         <div className="input-group">
             <label className="form-label">Specialist</label>
-            <input type="text" name='specialist' value={contactFormData.specialist} required className="form-input" placeholder=' e.g: Therapist, Doctor, etc' onChange={handleChange}/>
+            <input type="text" name='specialist' value={contactFormData.specialist} required className="form-input" placeholder=' e.g: Tech support, System management ' onChange={handleChange}/>
             <small className='error'>{errors.specialist && errors.specialist}</small>
         </div>
 
