@@ -75,6 +75,12 @@ input, button, label {
     color: rgb(34, 178, 70);
 }
 
+.success-form {
+    background-color: #4db97450;
+    
+}
+
+
 .txt-center {
   text-align: center;
 }
@@ -388,6 +394,10 @@ transition: background-color .2s;
 
     color: var(--clr-gray500);
     text-decoration: none;
+}
+
+.success-btn {
+    background-color: #22C55E;
 }
 
 
