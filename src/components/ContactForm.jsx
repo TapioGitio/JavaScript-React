@@ -87,7 +87,13 @@ const ContactForm = () => {
         </div>
         <div className="input-group">
             <label className="form-label">Specialist</label>
-            <input type="text" name='specialist' value={contactFormData.specialist} required className="form-input" placeholder=' e.g: Tech support, System management ' onChange={handleChange}/>
+            <select name='specialist' value={contactFormData.specialist} required className="form-input" onChange={handleChange}>
+            <option value=''></option>
+            <option value='Software Developer'>Software Developer</option>
+            <option value='Cyber Security'>Cyber Security</option>
+            <option value='UX Designer'>UX Designer</option>
+            <option value='Tech Support'>Tech Support</option>
+            </select>
             <small className='error'>{errors.specialist && errors.specialist}</small>
         </div>
 
