@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { validateEmail } from './Regex'
 
 const ContactForm = () => {
 
@@ -19,6 +20,11 @@ const ContactForm = () => {
 
       if(Object.keys(newErrors).length > 0) {
         setErrors(newErrors)
+        return
+      }
+
+      if(!validateEmail.test(contactFormData.email)) {
+        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
       }
  
@@ -62,7 +68,7 @@ const ContactForm = () => {
     return (
       <div className='form success-form'>
         <h2 className='mb-1'>Appointment sent!</h2>
-        <p className='mb-1'>We'll contact you if the time is available</p>
+        <p className='mb-1'>We'll contact you with available times</p>
         <button onClick={handleOkButton} className='btn-primary success-btn'>Ok</button>
       </div>
 
@@ -81,7 +87,7 @@ const ContactForm = () => {
         </div>
         <div className="input-group">
             <label className="form-label">Email Address</label>
-            <input type="email" name='email' value={contactFormData.email} required className="form-input" placeholder=' e.g: henrik@domain.com' onChange={handleChange}/>
+            <input type="email" name='email' value={contactFormData.email} required className="form-input" placeholder=' e.g: Henrik@domain.com' onChange={handleChange}/>
             <small className='error'>{errors.email && errors.email}</small>
         </div>
         <div className="input-group">
