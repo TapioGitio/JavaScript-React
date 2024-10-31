@@ -23,7 +23,7 @@ const ContactForm = () => {
         setErrors(newErrors)
         return
       }
-
+ 
       if(!validateEmail.test(contactFormData.email)) {
         setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
@@ -53,7 +53,7 @@ const ContactForm = () => {
       
   }
 
-  const handleSuccesConfirmation = () => {
+  const handleSuccesConfirmation = () => { 
     setSuccess(false)
   }
 

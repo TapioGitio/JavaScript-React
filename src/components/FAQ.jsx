@@ -4,15 +4,15 @@ import FAQitems from './FAQitems'
 function FAQ() {
 
 
-const [openItemId, setopenItemId ] = useState(null)
-const [storeFaq, setStoreFaq] = useState([])
-const [error, setError] = useState(null)
+    const [storeFaq, setStoreFaq] = useState([])
+    const [error, setError] = useState(null)
+    const [openItemId, setopenItemId ] = useState(null)
 
 
 const togglePanel = (id) => {
     setopenItemId(prevId => (prevId === id ? null : id))  
 }
-// Denna toggle funktionen fick ja hjälp med ai för att fungera som den ska
+// This toggle function was made with the help of AI to be able to get it functioning as the way i want.
 
 useEffect(() => {
 
