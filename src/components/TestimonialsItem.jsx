@@ -5,13 +5,15 @@ const TestimonialsItem = ({item}) => {
 
 const showRating = (rating) => {
 
-    const totalStars = 5;
+    const totalStars = 5
     let stars = []
-    for(let i = 0; i < totalStars; i++) {
-        if (i < rating) {
-            stars.push(<img key={i} src='images/star-icon.svg' alt='' />)
+
+    for(let i= 0; i < totalStars; i++) {
+
+        if(i < rating) {
+            stars.push(<img key={i} src='images/star-icon.svg'></img>)
         } else {
-            stars.push(<img key={i} src='images/greystar-icon.svg' alt='' />)
+            stars.push(<img key={i} src='images/greystar-icon.svg'></img>)
         }
     }
     return stars
