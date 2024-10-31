@@ -67,14 +67,14 @@ const ContactForm = () => {
 
     return (
       <div className='form success-form'>
-        <h2 className='mb-1'>Appointment sent!</h2>
+        <h3 className='mb-1'>Appointment sent!</h3>
         <p className='mb-1'>We'll contact you with available times</p>
         <button onClick={handleSuccesConfirmation} className='btn-primary success-btn'>Ok</button>
       </div>
 
     )
   }
-    
+  
   return (
 
     <form className="form" noValidate onSubmit={handleSubmit}>

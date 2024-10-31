@@ -10,8 +10,9 @@ const [error, setError] = useState(null)
 
 
 const togglePanel = (id) => {
-    setopenItemId(prevId => (prevId === id ? null : id))
+    setopenItemId(prevId => (prevId === id ? null : id))  
 }
+// Denna toggle funktionen fick ja hjälp med ai för att fungera som den ska
 
 useEffect(() => {
 
