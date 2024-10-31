@@ -524,6 +524,7 @@ header .container {
       .form-label {
           display: block;
           font-weight: 600;
+
           
       }
 
@@ -533,6 +534,11 @@ header .container {
           font-size: 1rem;
           border-radius: .8rem;
           border: 1px solid #D4D7E5;
+
+          &:active,
+          &:focus {
+            outline: 1px solid var(--clr-primary);
+          }
       }
 
       .input-group {
