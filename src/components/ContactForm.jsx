@@ -12,6 +12,7 @@ const ContactForm = () => {
     e.preventDefault()
 
       const newErrors =  {}
+
       Object.keys(contactFormData).forEach(field => {
         if(contactFormData[field].trim() === '') {
           newErrors[field] = `Please enter your ${field}.`
@@ -27,27 +28,32 @@ const ContactForm = () => {
         setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
       }
- 
-      const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(contactFormData)
-      })
+      
+      try {
+        
+        const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(contactFormData)
+        })
+  
+        if(!res.ok) {
+          throw new Error ('Failed to post the request')
+        }
 
-      if(res.ok) {
         setSuccess(true)
         setContactFormData({ fullName: "", email: "", specialist: ""})
         setErrors({})
-      } 
+
+      } catch (error) {
+        setErrors(prevErrors => ({...prevErrors, requestError: `Something went wrong with the request: ${error.message}`}))
+      }
       
-
-
-    
   }
 
-  const handleOkButton = () => {
+  const handleSuccesConfirmation = () => {
     setSuccess(false)
   }
 
@@ -63,7 +69,7 @@ const ContactForm = () => {
       <div className='form success-form'>
         <h2 className='mb-1'>Appointment sent!</h2>
         <p className='mb-1'>We'll contact you with available times</p>
-        <button onClick={handleOkButton} className='btn-primary success-btn'>Ok</button>
+        <button onClick={handleSuccesConfirmation} className='btn-primary success-btn'>Ok</button>
       </div>
 
     )
@@ -73,6 +79,8 @@ const ContactForm = () => {
 
     <form className="form" noValidate onSubmit={handleSubmit}>
         <h3>Get Online Consultation</h3>
+
+        {errors.requestError && <p className='error'>{errors.requestError}</p>}
 
         <div className="input-group">
             <label className="form-label">Full Name</label>
