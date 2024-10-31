@@ -11,9 +11,9 @@ const showRating = (rating) => {
     for(let i= 0; i < totalStars; i++) {
 
         if(i < rating) {
-            stars.push(<img key={i} src='images/star-icon.svg'></img>)
+            stars.push(<img key={i} src='./images/star-icon.svg'/>)
         } else {
-            stars.push(<img key={i} src='images/greystar-icon.svg'></img>)
+            stars.push(<img key={i} src='./images/greystar-icon.svg'/>)
         }
     }
     return stars

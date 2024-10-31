@@ -84,7 +84,7 @@ const ContactForm = () => {
 
         <div className="input-group">
             <label className="form-label">Full Name</label>
-            <input type="text" name='fullName' value={contactFormData.fullName} required className="form-input" placeholder=' e.g: Henrik Svensson' onChange={handleChange}/>
+            <input type="text" name='fullName' value={contactFormData.fullName} required className="form-input" placeholder=' e.g: Henrik Larsson' onChange={handleChange}/>
             <small className='error'>{errors.fullName && errors.fullName}</small>
         </div>
         <div className="input-group">
