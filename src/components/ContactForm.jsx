@@ -48,7 +48,7 @@ const ContactForm = () => {
         setErrors({})
 
       } catch (error) {
-        setErrors(prevErrors => ({...prevErrors, requestError: `Something went wrong with the request: ${error.message}`}))
+        setErrors(prevErrors => ({...prevErrors, requestError: `Something went wrong along the way: ${error.message}`}))
       }
       
   }
