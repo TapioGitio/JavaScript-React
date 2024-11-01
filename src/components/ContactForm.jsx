@@ -25,6 +25,7 @@ const ContactForm = () => {
       }
  
       if(!validateEmail.test(contactFormData.email)) {
+        setErrors({})
         setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
       }
