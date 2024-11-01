@@ -1421,8 +1421,8 @@ footer {
          }
 
          .btn {
-
-          margin-top: 2rem;
+            justify-content: start;
+            margin-top: 2rem;
 
          }
       }
@@ -1438,6 +1438,11 @@ footer {
 
           max-width: 526px;
 
+        .btn {
+            justify-content: start;
+            margin-top: 2rem;
+
+         }
 
           h2 {
 
