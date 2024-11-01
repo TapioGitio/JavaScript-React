@@ -17,6 +17,7 @@ const showRating = (rating) => {
         }
     }
     return stars
+    // Got help from AI to write the syntax for this looping of rating
 }
 
 
