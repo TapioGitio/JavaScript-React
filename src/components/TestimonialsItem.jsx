@@ -23,7 +23,7 @@ const showRating = (rating) => {
   return (
     <div className="rev-container">
         <div className="quotes">
-            <img src="./images/quotes-icon.svg" alt=""/>
+            <img src="./images/quotes-icon.svg"/>
         </div>
         <div className="img-container">
             {showRating(item.starRating)}
@@ -34,7 +34,7 @@ const showRating = (rating) => {
         </div>
 
         <div className="rev-fan">
-            <img src={item.avatarUrl} alt=""/>
+            <img src={item.avatarUrl}/>
             <div className="rev-name">
                 <p className="rev-1">{item.author}</p>
                 <p className="rev-2">{item.jobRole}</p>
