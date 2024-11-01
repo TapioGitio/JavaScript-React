@@ -1379,30 +1379,32 @@ footer {
 
 
       .container {
-
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
           
       }
 
-      .show-1 {
+      .btn {
+        justify-content: start;
+        margin-top: 2rem;
 
+     }
+
+      .show-1 {
          width: 416px;
          height: 302px;
          display: flex;
          flex-direction: column;
          align-content: flex-start;
-
-
          
          h2 {
-
           text-align: left;
           font-size: 2rem;
           color: var(--clr-gray900);
           font-weight: 800;
+          
          }
 
          p {
@@ -1419,12 +1421,6 @@ footer {
           justify-content: flex-start;
           gap: .5rem;
          }
-
-         .btn {
-            justify-content: start;
-            margin-top: 2rem;
-
-         }
       }
 
       .show-2 {
@@ -1436,37 +1432,31 @@ footer {
 
       .show-4 {
 
-          max-width: 526px;
+        max-width: 526px;
 
-        .btn {
-            justify-content: start;
-            margin-top: 2rem;
+        h2 {
 
-         }
+            font-size: 32px;
+            color: var(--clr-gray900);
+            font-weight: 800;
+            padding-bottom: 2rem;
+        }
 
-          h2 {
+        .bank {
 
-              font-size: 32px;
-              color: var(--clr-gray900);
-              font-weight: 800;
-              padding-bottom: 2rem;
-          }
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-          .bank {
+        .bank-1 {
 
-              display: flex;
-              gap: 2rem;
-              margin-bottom: 2rem;
-          }
-
-          .bank-1 {
-
-              p {
-                  margin-top: 1rem;
-                  text-align: left;
-                  color: var(--clr-gray700);
-              }
-          }
+            p {
+                margin-top: 1rem;
+                text-align: left;
+                color: var(--clr-gray700);
+            }
+        }
       }
   }
 
