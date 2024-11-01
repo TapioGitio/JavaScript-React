@@ -15,7 +15,7 @@ useEffect(() => {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials') 
 
             if(!res.ok) {
-                throw new Error("Failed to get the testimonial:");
+                throw new Error("Failed to get the testimonial");
             }
 
             const data = await res.json()
