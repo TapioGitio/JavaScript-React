@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { validateEmail } from './Regex'
+import { validateEmail, validateFullName } from './Regex'
 
 const ContactForm = () => {
 
@@ -18,18 +18,22 @@ const ContactForm = () => {
           newErrors[field] = `Please enter your ${field}.`
         }
       })
+      
+      if(!validateFullName.test(contactFormData.fullName)) {
 
+        newErrors.fullName = 'Please check your spelling, minimum of two characters are required'
+      }
+      if(!validateEmail.test(contactFormData.email)) {
+
+        newErrors.email = 'Please check your spelling, you forgot @example.com'
+      }
+ 
+    
       if(Object.keys(newErrors).length > 0) {
         setErrors(newErrors)
         return
       }
- 
-      if(!validateEmail.test(contactFormData.email)) {
-        setErrors({})
-        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
-        return
-      }
-    
+
       
       try {
         
