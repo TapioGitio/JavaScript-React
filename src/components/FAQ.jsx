@@ -37,9 +37,6 @@ useEffect(() => {
 }, [])
 
 
-
-
-
   return (
     <section className="faq">
         <div className="container">

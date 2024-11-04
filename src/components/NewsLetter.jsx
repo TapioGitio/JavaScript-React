@@ -23,25 +23,29 @@ function NewsLetter() {
             return
         }
 
+        try{
 
-        const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(email)
-        })
+            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(email)
+            })
+    
+            if(res.ok) {
+                console.log('Email sent:', email.email)
+                setSuccess('Thank you for subscribing!')
+                setError('')
+                setEmail({ email: '' })
+            } else {
+                const errorResp = await res.json()
+                setError(`Encountered an error posting the email: ${errorResp.message}`)
+            }
 
-        if(res.ok) {
-            console.log('Email sent:', email.email)
-            setSuccess('Thank you for subscribing!')
-            setError('')
-            setEmail({ email: '' })
-        } else {
-            const errorResp = await res.json()
-            setError(`Encountered an error posting the email: ${errorResp.message}`)
+        } catch {
+            setError(`Could not send ur email, try again later!`)
         }
-
 
     }
 
