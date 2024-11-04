@@ -7,13 +7,11 @@ const showRating = (rating) => {
 
     const totalStars = 5
     let stars = []
-
-    for(let i= 0; i < totalStars; i++) {
-
-        if(i < rating) {
-            stars.push(<img key={i} src='./images/star-icon.svg'/>)
+    for(let i = 0; i < totalStars; i++) {
+        if( i < rating) {
+            stars.push(<img key={i} src='./images/star-icon.svg'></img>)
         } else {
-            stars.push(<img key={i} src='./images/greystar-icon.svg'/>)
+            stars.push(<img key={i} src='./images/greystar-icon.svg'></img>)
         }
     }
     return stars
@@ -47,4 +45,3 @@ const showRating = (rating) => {
 }
 
 export default TestimonialsItem
-

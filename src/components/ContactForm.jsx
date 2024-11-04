@@ -29,6 +29,7 @@ const ContactForm = () => {
         setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, the format is wrong'}))
         return
       }
+    
       
       try {
         
