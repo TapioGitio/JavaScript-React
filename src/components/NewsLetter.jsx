@@ -44,7 +44,7 @@ function NewsLetter() {
             }
 
         } catch {
-            setError(`Could not send ur email, try again later!`)
+            setError(`Could not send your email, try again later!`)
         }
 
     }
