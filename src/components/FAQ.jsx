@@ -49,7 +49,7 @@ useEffect(() => {
                 <div className="call-us">
                     <div className="box">
                         <img src="./images/phone-icon.svg" alt=""/>
-                        <p>Still have  questions?</p>
+                        <p>Still have questions?</p>
                         <div className="btn">
                             <button className="btn-call-1">
                             <span>Contact us</span>
