@@ -6,12 +6,12 @@ function FAQ() {
 
     const [storeFaq, setStoreFaq] = useState([])
     const [error, setError] = useState(null)
-    const [openItemId, setopenItemId ] = useState(null)
+    const [isOpen, setIsOpen ] = useState(null)
 
 
-const togglePanel = (id) => {
-    setopenItemId(prevId => (prevId === id ? null : id))  
-}
+    const togglePanel = (id) => {
+        setIsOpen(isOpen === id ? null : id)  
+    }
 // This toggle function was made with the help of AI to be able to get it functioning as the way i want.
 
 useEffect(() => {
@@ -75,8 +75,8 @@ useEffect(() => {
             <div className="rightside">
 
                 {error && <div> {error}</div>}
-                {storeFaq.map(item => (
-                    <FAQitems key={item.id} item={item} isOpen={openItemId === item.id} onToggle={() => togglePanel(item.id)} />
+                {storeFaq.map((item) => (
+                    <FAQitems key={item.id} item={item} isOpen={isOpen === item.id} onToggle={() => togglePanel(item.id)} />
                 ))}
                 
             </div>

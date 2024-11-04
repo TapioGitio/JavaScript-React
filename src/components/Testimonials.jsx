@@ -40,7 +40,7 @@ useEffect(() => {
             </div>
 
             {error && <div>{error}</div>}
-            {storeTestimonials.map(item => (
+            {storeTestimonials.map((item) => (
                 <TestimonialsItem key={item.id} item={item} />
             ))}
 
