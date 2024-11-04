@@ -19,21 +19,23 @@ const ContactForm = () => {
         }
       })
       
-      if(!validateFullName.test(contactFormData.fullName)) {
-
-        newErrors.fullName = 'Please check your spelling, minimum of two characters are required'
-      }
-      if(!validateEmail.test(contactFormData.email)) {
-
-        newErrors.email = 'Please check your spelling, you forgot @example.com'
-      }
- 
-    
       if(Object.keys(newErrors).length > 0) {
         setErrors(newErrors)
         return
       }
-
+      
+      if(!validateFullName.test(contactFormData.fullName)) {
+        setErrors({})
+        setErrors(prevErrors => ({...prevErrors, fullName: 'Please check your spelling, minimum of two characters'}))
+        return
+      }
+ 
+      if(!validateEmail.test(contactFormData.email)) {
+        setErrors({})
+        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, e.g @example.com'}))
+        return
+      }
+      
       
       try {
         
