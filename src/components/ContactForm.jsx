@@ -25,17 +25,19 @@ const ContactForm = () => {
       }
       
       if(!validateFullName.test(contactFormData.fullName)) {
-        setErrors({})
-        setErrors(prevErrors => ({...prevErrors, fullName: 'Please check your spelling, minimum of two characters'}))
-        return
+        
+        newErrors.fullName = 'Please check your spelling, minimum of two characters'
       }
  
       if(!validateEmail.test(contactFormData.email)) {
-        setErrors({})
-        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, e.g @example.com'}))
-        return
+        
+        newErrors.email = 'Please check your spelling, e.g @example.com'
       }
       
+      if(Object.keys(newErrors).length > 0) {
+        setErrors(newErrors)
+        return
+      }
       
       try {
         
