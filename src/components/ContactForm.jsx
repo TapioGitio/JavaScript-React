@@ -19,7 +19,7 @@ const ContactForm = () => {
 
     if(!validateFullName.test(contactFormData.fullName)) {
 
-      inputErrors.fullName = 'Requirements: Atleast two characters, no numbers'
+      inputErrors.fullName = 'Requirements: Atleast two letters and no numbers'
     }
 
     if(!validateEmail.test(contactFormData.email)) {
@@ -30,7 +30,24 @@ const ContactForm = () => {
     setErrors(inputErrors)
     return Object.keys(inputErrors).length === 0;
   }
-  
+
+  const validateInputFields = (name, value) => {
+
+    let error = ''
+
+    if(name === 'fullName' && !validateFullName.test(value)) {
+
+      error = 'Requirements: Atleast two letters and no numbers'
+    }
+
+    if(name === 'email' && !validateEmail.test(value)) {
+
+      error = 'Requirements: something@example.com'
+    }
+
+    setErrors(prevErrors => ({...prevErrors, [name]: error}))
+  }
+
   const handleSuccesConfirmation = () => { 
     setSuccess(false)
   }
@@ -39,6 +56,7 @@ const ContactForm = () => {
     const { name, value } = e.target
     setContactFormData({...contactFormData, [name]: value})
 
+    validateInputFields(name, value)
   }
 
   const handleSubmit = async (e) => {
