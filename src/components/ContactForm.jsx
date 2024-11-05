@@ -1,41 +1,42 @@
 import React, { useState } from 'react'
-import { validateEmail, validateFullName } from './Regex'
+import { validateBlankSpace, validateEmail, validateFullName } from './Regex'
 
 const ContactForm = () => {
 
   const [contactFormData, setContactFormData] = useState({ fullName: "", email: "", specialist: ""})
   const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
+
+
+  const validateInputs = () => {
+
+    const inputErrors = {}
+
+    if(!validateBlankSpace.test(contactFormData.specialist)) {
+
+      inputErrors.specialist = 'Requirements: Choose a specialist'
+    } 
+
+    if(!validateFullName.test(contactFormData.fullName)) {
+
+      inputErrors.fullName = 'Requirements: Atleast two characters, no numbers'
+    }
+
+    if(!validateEmail.test(contactFormData.email)) {
+
+      inputErrors.email = 'Requirements: something@example.com'
+    }
+
+    setErrors(inputErrors)
+    return Object.keys(inputErrors).length === 0;
+  }
   
   const handleSubmit = async (e) => {
 
     e.preventDefault()
 
-      const newErrors =  {}
 
-      Object.keys(contactFormData).forEach(field => {
-        if(contactFormData[field].trim() === '') {
-          newErrors[field] = `Please enter your ${field}.`
-        }
-      })
-      
-      if(Object.keys(newErrors).length > 0) {
-        setErrors(newErrors)
-        return
-      }
-      
-      if(!validateFullName.test(contactFormData.fullName)) {
-        setErrors({})
-        setErrors(prevErrors => ({...prevErrors, fullName: 'Please check your spelling: atleast two characters, no numbers'}))
-        return
-      }
- 
-      if(!validateEmail.test(contactFormData.email)) {
-        setErrors({})
-        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling: e.g @example.com'}))
-        return
-      }
-      
+      if(!validateInputs()) return
       
       try {
         
@@ -59,6 +60,7 @@ const ContactForm = () => {
         setErrors(prevErrors => ({...prevErrors, requestError: `Something went wrong along the way: ${error.message}`}))
       }
       
+
   }
 
   const handleSuccesConfirmation = () => { 
@@ -69,6 +71,7 @@ const ContactForm = () => {
     const { name, value } = e.target
     setContactFormData({...contactFormData, [name]: value})
 
+    
   }
 
   if(success) {
