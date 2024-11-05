@@ -33,7 +33,6 @@ const handleSidebarClose = () => {
     setIsOpen(false)
 }
 
-
   return (
     <header>
         <div className="container">
