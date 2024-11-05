@@ -26,13 +26,13 @@ const ContactForm = () => {
       
       if(!validateFullName.test(contactFormData.fullName)) {
         setErrors({})
-        setErrors(prevErrors => ({...prevErrors, fullName: 'Please check your spelling, minimum of two characters'}))
+        setErrors(prevErrors => ({...prevErrors, fullName: 'Please check your spelling: atleast two characters, no numbers'}))
         return
       }
  
       if(!validateEmail.test(contactFormData.email)) {
         setErrors({})
-        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling, e.g @example.com'}))
+        setErrors(prevErrors => ({...prevErrors, email: 'Please check your spelling: e.g @example.com'}))
         return
       }
       

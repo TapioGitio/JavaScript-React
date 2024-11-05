@@ -1,3 +1,3 @@
 export const validateEmail = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
-export const validateFullName = /^.{2}$/
+export const validateFullName = /^[A-Öa-ö\s\-]{2,}$/
 
