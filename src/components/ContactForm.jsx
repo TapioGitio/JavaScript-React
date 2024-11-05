@@ -31,8 +31,18 @@ const ContactForm = () => {
     return Object.keys(inputErrors).length === 0;
   }
   
-  const handleSubmit = async (e) => {
+  const handleSuccesConfirmation = () => { 
+    setSuccess(false)
+  }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setContactFormData({...contactFormData, [name]: value})
+
+  }
+
+  const handleSubmit = async (e) => {
+    
     e.preventDefault()
 
 
@@ -60,19 +70,8 @@ const ContactForm = () => {
         setErrors(prevErrors => ({...prevErrors, requestError: `Something went wrong along the way: ${error.message}`}))
       }
       
-
   }
 
-  const handleSuccesConfirmation = () => { 
-    setSuccess(false)
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setContactFormData({...contactFormData, [name]: value})
-
-    
-  }
 
   if(success) {
 
