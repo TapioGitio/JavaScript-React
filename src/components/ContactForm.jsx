@@ -33,19 +33,19 @@ const ContactForm = () => {
 
   const validateInputFields = (name, value) => {
 
-    let error = ''
+    let message = ''
 
     if(name === 'fullName' && !validateFullName.test(value)) {
 
-      error = 'Requirements: Atleast two letters and no numbers'
+      message = 'Requirements: Atleast two letters and no numbers'
     }
 
     if(name === 'email' && !validateEmail.test(value)) {
 
-      error = 'Requirements: something@example.com'
+      message = 'Requirements: something@example.com'
     }
 
-    setErrors(prevErrors => ({...prevErrors, [name]: error}))
+    setErrors(prevErrors => ({...prevErrors, [name]: message}))
   }
 
   const handleSuccesConfirmation = () => { 
