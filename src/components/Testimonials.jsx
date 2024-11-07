@@ -14,14 +14,24 @@ useEffect(() => {
         try {
             const res = await fetch('https://win24-assignment.azurewebsites.net/api/testimonials') 
 
-            if(!res.ok) {
-                throw new Error("Failed to get the testimonial");
-            }
 
-            const data = await res.json()
-            setStoreTestimonials(data)
-        } catch (error) {
-            setError(`Error loading the testimonials: ${error.message}`)
+            if(res.ok) {
+
+                const data = await res.json()
+                setStoreTestimonials(data)  
+
+            } else if (res.status === 404) {
+                throw new Error("Testimonials not found, check the URL")
+        
+            } else if (res.status >= 500){
+                throw new Error("Server issue, come back later")
+        
+            } else {
+                throw new Error("We are having a coffee break, try again later")
+            }
+        }
+        catch (error) {
+            setError(`Error loading: ${error.message}`)
         }
     }
 
@@ -39,7 +49,7 @@ useEffect(() => {
                 <h2>Clients are <br/> Loving Our App</h2>
             </div>
 
-            {error && <div>{error}</div>}
+            {error && <div className='error'>{error}</div>}
             {storeTestimonials.map((item) => (
                 <TestimonialsItem key={item.id} item={item} />
             ))}
