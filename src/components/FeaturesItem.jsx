@@ -6,7 +6,7 @@ const FeaturesItem = ({item}) => {
 
   return (
     <div className="card">
-        <img src={item.image} alt=''/>
+        <img src={item.image} alt={item.title + "-icon"}/>
         <div className="card-text">
             <h3>{item.title}</h3>
             <p>{item.content}</p>
