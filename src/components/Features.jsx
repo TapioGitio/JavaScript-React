@@ -36,8 +36,8 @@ function Features() {
     
                 <div className="cards">
 
-                    {featureCard.map((item) => (
-                        <FeaturesItem key={item.id} item={item} />
+                    {featureCard.map((feat) => (
+                        <FeaturesItem key={feat.id} item={feat} />
                     ))}
                     
                 </div>
