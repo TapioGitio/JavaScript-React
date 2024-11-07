@@ -33,7 +33,7 @@ const showRating = (rating) => {
         </div>
 
         <div className="rev-fan">
-            <img src={item.avatarUrl}/>
+            <img src={item.avatarUrl} alt={`picture of: ${item.author}`}/>
             <div className="rev-name">
                 <p className="rev-1">{item.author}</p>
                 <p className="rev-2">{item.jobRole}</p>
