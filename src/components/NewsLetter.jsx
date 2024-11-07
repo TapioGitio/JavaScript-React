@@ -66,7 +66,7 @@ function NewsLetter() {
                 <div className="news-title">
                     <h2>Subscribe to our newsletter </h2>
                     
-                    {error ? (<small className='error'>{error}</small>) : (<small className='success'>{success}</small>)}
+                    {error ? (<small className='error'>{error}</small>) : success ? (<small className='success'>{success}</small>) :null}
                 </div>
             </div>
 
