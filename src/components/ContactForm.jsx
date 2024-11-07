@@ -24,7 +24,7 @@ const ContactForm = () => {
 
     if(!validateEmail.test(contactFormData.email)) {
 
-      inputErrors.email = 'Requirements: something@example.com'
+      inputErrors.email = 'Requirements: Something@example.com'
     }
 
     setErrors(inputErrors)
