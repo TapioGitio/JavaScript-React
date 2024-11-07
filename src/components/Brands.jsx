@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import BrandItem from './BrandItem'
 
 
@@ -6,6 +6,7 @@ function Brands() {
 
 
     const brandItems = [
+        
         { id: 'brand-1', logo: './images/logo-icon-1.svg', altText: 'Logo ipsum logo 1'},
         { id: 'brand-2', logo: './images/logo-icon-2.svg', altText: 'Logo ipsum logo 2'},
         { id: 'brand-3', logo: './images/logo-icon-3.svg', altText: 'Logo ipsum logo 3'},

@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import FeaturesItem from './FeaturesItem'
 
 function Features() {
 
     const contentText = "Id mollis consectetur congue egestas egestas suspendisse blandit justo"
 
-    const [featureCard, setFeatureCard] = useState([
+    const featureCard = [
+        
         {id: "card-1", image: './images/payment-icon.svg', title: 'Easy payments', content: contentText},
         {id: "card-2", image: './images/data-icon.svg', title: 'Data Security', content: contentText},
         {id: "card-3", image: './images/cost-icon.svg', title: 'Cost Statistics', content: contentText},
         {id: "card-4", image: './images/support-icon.svg', title: 'Support 24/7', content: contentText},
         {id: "card-5", image: './images/cashback-icon.svg', title: 'Regular Cashback', content: contentText},
         {id: "card-6", image: './images/smiley-icon.svg', title: 'Top Standards', content: contentText},
-    ])
+    ]
 
   return (
 
