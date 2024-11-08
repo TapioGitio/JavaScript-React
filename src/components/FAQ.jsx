@@ -22,12 +22,21 @@ useEffect(() => {
         try{
             const res = await fetch ('https://win24-assignment.azurewebsites.net/api/faq')
 
-            if(!res.ok) {
-                throw new Error ('Failed to get the FAQ info') 
-            }
+            if(res.ok) {
+                
+                const data = await res.json()
+                setError(null)
+                setStoreFaq(data)
+            } else if(res.status === 404) {
 
-            const data = await res.json()
-            setStoreFaq(data)
+                throw new Error('Check if the URL is correct')
+            } else if(res.status === 400) {
+
+                throw new Error('No content was found')
+            } else {
+
+                throw new Error('Unexpected error has occured')
+            }
         } catch(error) {
             setError(`Could not retrieve the data: ${error.message}`)
         }
@@ -71,7 +80,7 @@ useEffect(() => {
             </div>
             <div className="rightside">
 
-                {error && <div> {error}</div>}
+                {error && <div className='error txt-center'> {error}</div>}
                 {storeFaq.map((item) => (
                     <FAQitems key={item.id} item={item} isOpen={isOpen === item.id} onToggle={() => togglePanel(item.id)} />
                 ))}
