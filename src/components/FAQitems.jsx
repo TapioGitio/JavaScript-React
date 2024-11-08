@@ -4,8 +4,6 @@ import FAQbutton from './FAQbutton'
 const FAQitems = ({item , isOpen, onToggle}) => {
 
 
-  
-
   return (
     <div className="acc-border">
         <div onClick={onToggle} className="accordion">
