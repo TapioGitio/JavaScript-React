@@ -22,7 +22,7 @@ useEffect(() => {
 }, [DarkTheme])
 
 const toggleDark = () => {
-    setDarkTheme(theme => !theme)
+    setDarkTheme(DarkTheme => !DarkTheme)
 }
 
 const toggleSidebar = () => {
