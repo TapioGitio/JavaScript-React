@@ -12,6 +12,7 @@ function NewsLetter() {
         e.preventDefault()
 
         setSuccess(null)
+        setError(null)
 
 
         if(email.email.trim() === '') {
@@ -40,15 +41,18 @@ function NewsLetter() {
                 setEmail({ email: '' })
 
             } else if(res.status === 404){
-                setError(`Encountered an error posting the email: Check the URL`)
+
+                throw new Error('Check the URL')
             } else if(res.status >= 500) {
-                setError(`Encountered an error posting the email: Server-side, try again later`)
+
+                throw new Error('Server-side, try again later')
             } else {
-                setError('Encountered an unexpected error: try again later')
+                
+                throw new Error('Unexpected error: try again later')
             }
 
-        } catch {
-            setError(`Could not send your email, try again later!`)
+        } catch(error) {
+            setError(`Encountered an error posting the email: ${error.message}`)
         }
 
     }
