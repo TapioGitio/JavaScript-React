@@ -43,6 +43,8 @@ function NewsLetter() {
                 setError(`Encountered an error posting the email: Check the URL`)
             } else if(res.status >= 500) {
                 setError(`Encountered an error posting the email: Server-side, try again later`)
+            } else {
+                setError('Encountered an unexpected error: try again later')
             }
 
         } catch {
