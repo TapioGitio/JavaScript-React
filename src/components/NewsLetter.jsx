@@ -48,7 +48,7 @@ function NewsLetter() {
                 throw new Error('Server-side, try again later')
             } else {
                 
-                throw new Error('Unexpected error: try again later')
+                throw new Error('Unexpected error, try again later')
             }
 
         } catch(error) {
