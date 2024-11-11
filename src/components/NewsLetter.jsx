@@ -4,14 +4,14 @@ import { validateEmail } from './Regex'
 function NewsLetter() {
 
     const [email, setEmail] = useState({ email: '' })
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
+    const [error, setError] = useState(null)
+    const [success, setSuccess] = useState(null)
 
     const handleSubmit = async (e) => {
 
         e.preventDefault()
 
-        setSuccess('')
+        setSuccess(null)
 
 
         if(email.email.trim() === '') {
@@ -25,7 +25,7 @@ function NewsLetter() {
 
         try{
 
-            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscrib', {
+            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ function NewsLetter() {
             if(res.ok) {
                 console.log('Email sent:', email.email)
                 setSuccess('Thank you for subscribing!')
-                setError('')
+                setError(null)
                 setEmail({ email: '' })
 
             } else if(res.status === 404){
@@ -57,7 +57,7 @@ function NewsLetter() {
         
         const { name, value } = e.target
         setEmail({...email, [name]: value})
-        setError('')
+        setError(null)
     }   
 
   return (
