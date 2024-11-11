@@ -70,9 +70,7 @@ const ContactForm = () => {
         
         const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/contact', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(contactFormData)
         })
         

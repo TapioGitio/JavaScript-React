@@ -28,9 +28,7 @@ function NewsLetter() {
 
             const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(email)
             })
     
