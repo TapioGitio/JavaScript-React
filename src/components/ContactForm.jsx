@@ -54,7 +54,7 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setContactFormData({...contactFormData, [name]: value})
+    setContactFormData(prevFormData => ({...prevFormData, [name]: value}))
 
     validateInputFields(name, value)
   }
