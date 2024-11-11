@@ -25,7 +25,7 @@ function NewsLetter() {
 
         try{
 
-            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscribe', {
+            const res = await fetch ('https://win24-assignment.azurewebsites.net/api/forms/subscrib', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -38,9 +38,11 @@ function NewsLetter() {
                 setSuccess('Thank you for subscribing!')
                 setError('')
                 setEmail({ email: '' })
-            } else {
-                const errorResp = await res.json()
-                setError(`Encountered an error posting the email: ${errorResp.message}`)
+
+            } else if(res.status === 404){
+                setError(`Encountered an error posting the email: Check the URL`)
+            } else if(res.status >= 500) {
+                setError(`Encountered an error posting the email: Server-side, try again later`)
             }
 
         } catch {
