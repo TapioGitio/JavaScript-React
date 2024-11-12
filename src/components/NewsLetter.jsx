@@ -33,7 +33,6 @@ function NewsLetter() {
             })
     
             if(res.ok) {
-                console.log('Email sent:', email.email)
                 setSuccess('Thank you for subscribing!')
                 setError(null)
                 setEmail({ email: '' })
