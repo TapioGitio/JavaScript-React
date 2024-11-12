@@ -5,7 +5,11 @@ import SideBar from './SideBar'
 
 function Header() {
 
-const [DarkTheme, setDarkTheme] = useState(false)
+const [DarkTheme, setDarkTheme] = useState(() => {
+  const savedTheme = localStorage.getItem('theme')
+  return savedTheme === 'dark'
+})
+
 const [isOpen, setIsOpen] = useState(false)
 
 useEffect(() => {
@@ -15,9 +19,12 @@ useEffect(() => {
   if(DarkTheme) {
     htmlElement.classList.add('dark')
     htmlElement.style.colorScheme = 'dark'
+    localStorage.setItem('theme', 'dark')
+
   } else {
     htmlElement.classList.remove('dark')
     htmlElement.style.colorScheme = 'light'
+    localStorage.setItem('theme', 'light')
   }
 }, [DarkTheme])
 
