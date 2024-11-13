@@ -36,10 +36,6 @@ const toggleSidebar = () => {
     setIsOpen(!isOpen)
 }
 
-const handleSidebarClose = () => {
-    setIsOpen(false)
-}
-
   return (
     <header>
         <div className="container">
@@ -66,7 +62,7 @@ const handleSidebarClose = () => {
             </button>
 
             <div>
-                <SideBar isOpen={isOpen} handleSidebarClose={handleSidebarClose} />
+                <SideBar isOpen={isOpen} toggleSidebar={toggleSidebar} />
             </div>
         </div>
     </header>
