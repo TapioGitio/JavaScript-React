@@ -95,6 +95,7 @@ option {
 } 
 
 
+
 .flex {
   display: flex;
   justify-content: center;
@@ -567,7 +568,33 @@ header .container {
       }
      }
      
-  }
+    }
+    /* MAP SECTION START */
+    .map {
+       display: none;
+    }
+    .socials {
+        padding-top: 6rem;
+    }
+    .icon-container {
+        display: flex;
+        gap: 1rem;
+    }
+    .map-1, .map-2 {
+
+        h2 {
+            font-size: 1.5rem;
+        }
+        p {
+            color: var(--clr-gray700);
+
+            i {
+                padding-right: 1rem;
+                color: var(--clr-primary);
+            }
+        }
+    }
+    /* MAP SECTION ENDS */
   /* CONTACT PAGE ENDS */
 
 .grid-container {
@@ -1286,7 +1313,8 @@ footer {
   /* CONTACT PAGE ENDS */
   /* MAP PAGE START */
   .map-page {
-      padding-top: 4rem;
+
+      padding-top: 8rem;
       padding-bottom: 10rem;
       background-color: var(--clr-bg-white);
 
@@ -1297,6 +1325,7 @@ footer {
       }
 
       .map {
+          display: block;
           padding-bottom: 60%;
       }
       .map iframe {
@@ -1306,6 +1335,19 @@ footer {
           top: 0;
           position: absolute;
       }
+      
+
+      .map-info {
+        position: absolute;
+        top: 0;
+        right: 6rem;
+      }
+
+      .map-1 {
+        margin-bottom: 1rem;
+      }
+
+
 
   }
   /* MAP PAGE ENDS */

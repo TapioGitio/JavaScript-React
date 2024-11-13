@@ -15,9 +15,26 @@ const ContactMap = () => {
           </div>
 
           <div className="map-info">
-            <div className="map-1"></div>
-            <div className="map-2"></div>
-            <div className="socials"></div>
+            <div className="map-1">
+              <h2 className="mb-1">Medical Center 1</h2>
+              <p className="mb-1"><i class="fa-solid fa-location-dot"></i>4517 Washington Ave. Manchester, Kentucky 39495</p>
+              <p className="mb-1"><i class="fa-solid fa-phone"></i>(406) 555-0120</p>
+              <p className="mb-1"><i class="fa-solid fa-clock"></i>Mon – Fri: 9:00 am – 22:00 am Sat – Sun: 9:00 am – 20:00 am</p>
+            </div>
+            <div className="map-2">
+            <h2 className="mb-1">Medical Center 2</h2>
+            <p className="mb-1"><i class="fa-solid fa-location-dot"></i>2464 Royal Ln. Mesa,New Jersey 45463</p>
+            <p className="mb-1"><i class="fa-solid fa-phone"></i>(406) 544-0123</p>
+            <p className="mb-1"><i class="fa-solid fa-clock"></i>Mon – Fri: 9:00 am – 22:00 am Sat – Sun: 9:00 am – 20:00 am</p>
+            </div>
+            <div className="socials">
+              <div className="icon-container">
+                <img src="/images/facebook.svg" alt="" />
+                <img src="/images/twitter.svg" alt="" />
+                <img src="/images/camera.svg" alt="" />
+                <img src="/images/youtube.svg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
