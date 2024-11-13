@@ -4,13 +4,14 @@ import { Link, NavLink} from 'react-router-dom'
 import SideBar from './SideBar'
 
 function Header() {
+  
+const [isOpen, setIsOpen] = useState(false)
 
 const [DarkTheme, setDarkTheme] = useState(() => {
   const savedTheme = localStorage.getItem('theme')
   return savedTheme === 'dark'
 })
 
-const [isOpen, setIsOpen] = useState(false)
 
 useEffect(() => {
     
