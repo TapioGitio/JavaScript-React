@@ -19,7 +19,7 @@ const ContactForm = () => {
 
     if(!validateFullName.test(contactFormData.fullName)) {
 
-      inputErrors.fullName = 'Requirements: Atleast two letters and no numbers'
+      inputErrors.fullName = 'Requirements: Atleast two letters and no numbers or symbols'
     }
 
     if(!validateEmail.test(contactFormData.email)) {
@@ -37,7 +37,7 @@ const ContactForm = () => {
 
     if(name === 'fullName' && !validateFullName.test(value)) {
 
-      fieldErrors.fullName = 'Requirements: Atleast two letters and no numbers'
+      fieldErrors.fullName = 'Requirements: Atleast two letters and no numbers or symbols'
     }
 
     if(name === 'email' && !validateEmail.test(value)) {
