@@ -573,6 +573,7 @@ header .container {
         padding-top: 4rem;
 
     }
+
     .map {
        display: none;
     }
@@ -597,6 +598,10 @@ header .container {
                 color: var(--clr-primary);
             }
         }
+    }
+
+    .map-1 {
+        margin-bottom: 4rem;
     }
     .m-l {
         margin-left: 2rem;
@@ -1321,13 +1326,12 @@ footer {
   /* MAP PAGE START */
   .map-page {
 
-      padding-top: 8rem;
-      padding-bottom: 8rem;
+      padding-top: 14rem;
+      padding-bottom: 4rem;
       background-color: var(--clr-bg-white);
 
 
       .container {
-          margin-top: 6rem;
           position: relative;
       }
 
@@ -1343,13 +1347,15 @@ footer {
           position: absolute;
       }
       
-
       .map-info {
         position: absolute;
         top: 0;
         right: 6rem;
       }
 
+      .map-1 {
+        margin-bottom: 2rem;
+      }
       .icon-container {
         justify-content: start;
     }
