@@ -85,7 +85,6 @@ option {
     
 }
 
-
 .txt-center {
   text-align: center;
 }
@@ -570,6 +569,10 @@ header .container {
      
     }
     /* MAP SECTION START */
+    .map-page {
+        padding-top: 4rem;
+
+    }
     .map {
        display: none;
     }
@@ -578,6 +581,7 @@ header .container {
     }
     .icon-container {
         display: flex;
+        justify-content: center;
         gap: 1rem;
     }
     .map-1, .map-2 {
@@ -593,6 +597,9 @@ header .container {
                 color: var(--clr-primary);
             }
         }
+    }
+    .m-l {
+        margin-left: 2rem;
     }
     /* MAP SECTION ENDS */
   /* CONTACT PAGE ENDS */
@@ -1315,7 +1322,7 @@ footer {
   .map-page {
 
       padding-top: 8rem;
-      padding-bottom: 10rem;
+      padding-bottom: 8rem;
       background-color: var(--clr-bg-white);
 
 
@@ -1329,7 +1336,7 @@ footer {
           padding-bottom: 60%;
       }
       .map iframe {
-          height: 60%;
+          height: 65%;
           width: 50%;
           left: 0;
           top: 0;
@@ -1343,11 +1350,9 @@ footer {
         right: 6rem;
       }
 
-      .map-1 {
-        margin-bottom: 1rem;
-      }
-
-
+      .icon-container {
+        justify-content: start;
+    }
 
   }
   /* MAP PAGE ENDS */
