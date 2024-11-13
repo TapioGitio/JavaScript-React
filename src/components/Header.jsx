@@ -44,7 +44,6 @@ const toggleSidebar = () => {
             <Link id="logo" to={'/'}><img src="images/silicon-icon.svg" alt="Silicon logo" /></Link>
 
             <nav className="navbar">
-                <NavLink className="nav-link" to={'/'}>Home</NavLink>
                 <NavLink className="nav-link" to={'/contacts'}>Contact</NavLink>
                 <a className="nav-link" href="#ft">Features</a>
                 
