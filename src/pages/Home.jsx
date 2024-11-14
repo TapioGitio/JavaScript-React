@@ -12,15 +12,15 @@ import NewsLetter from '../components/NewsLetter'
 function Home() {
     return (
       <>
-          <MainSection/>
-          <Brands/>
-          <Features />
-          <Carousel/>
-          <ShowCase/>
-          <Testimonials/>
-          <FAQ/>
-          <Contact/>
-          <NewsLetter/>
+        <MainSection/>
+        <Brands/>
+        <Features />
+        <Carousel/>
+        <ShowCase/>
+        <Testimonials/>
+        <FAQ/>
+        <Contact/>
+        <NewsLetter/>
       </>
     )
 }
