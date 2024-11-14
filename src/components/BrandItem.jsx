@@ -1,9 +1,9 @@
 import React from 'react'
 
-const BrandItem = ({item}) => {
+const BrandItem = ({ Brand }) => {
   return (
-    <div id= {item.id} className="brand-box">
-        <img src={item.logo} alt={item.altText}/>
+    <div id= {Brand.id} className="brand-box">
+        <img src={Brand.logo} alt={Brand.altText}/>
     </div>
   )
 }

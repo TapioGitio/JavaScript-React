@@ -1,15 +1,15 @@
 import React from 'react'
 
-const FeaturesItem = ({item}) => {
+const FeaturesItem = ({ Feature }) => {
 
 
 
   return (
     <div className="card">
-        <img src={item.image} alt={item.title + "-icon"}/>
+        <img src={Feature.image} alt={Feature.title + "-icon"}/>
         <div className="card-text">
-            <h3>{item.title}</h3>
-            <p>{item.content}</p>
+            <h3>{Feature.title}</h3>
+            <p>{Feature.content}</p>
         </div>
     </div>
   )

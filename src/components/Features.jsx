@@ -26,20 +26,15 @@ function Features() {
             <div className="card-container">
                 <div className="app-title">
                     <h2>App Features</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Proin volutpat mollis egestas.
-                        Nam luctus facilisis ultrices. Pellentesque
-                        volutpat ligula est. Mattis fermentum, at nec
-                        lacus.
-                    </p>
+                    <p>Navigate effortlessly through our intuitive design, making transactions quick and easy, whether you're sending money, paying bills, or making purchases..</p>
                 </div>
     
                 <div className="cards">
 
-                    {featureCard.map((feat) => (
-                        <FeaturesItem key={feat.id} item={feat} />
+                    {featureCard.map((item) => (
+                        <FeaturesItem key={item.id} Feature={item} />
                     ))}
-                    
+
                 </div>
             </div>
         </div>

@@ -18,8 +18,8 @@ function Brands() {
   return (
     <section id="brands">
         <div className="container">
-            {brandItems.map((brand) => (
-                <BrandItem key={brand.id} item={brand} />
+            {brandItems.map((item) => (
+                <BrandItem key={item.id} Brand={item} />
             ))}
         </div>
     </section>
