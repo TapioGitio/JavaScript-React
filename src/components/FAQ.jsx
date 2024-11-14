@@ -12,7 +12,7 @@ function FAQ() {
     const togglePanel = (id) => {
         setIsOpen(isOpen === id ? null : id )  
     }
-// This toggle function was made with the help of AI to be able to get it functioning as the way i want.
+// This toggle function was made with the help of AI to be able to get it functioning as the way I want / open one and close the others.
 
 useEffect(() => {
 

@@ -11,7 +11,7 @@ const [DarkTheme, setDarkTheme] = useState(() => {
   const savedTheme = localStorage.getItem('theme')
   return savedTheme === 'dark'
 })
-// AI suggested this "lazy initiation" of checking whether the localstorage had darkmode set to on.
+// AI suggested this "lazy initiation" of checking whether the localstorage had darkmode set to on / less code to write.
 
 
 useEffect(() => {
