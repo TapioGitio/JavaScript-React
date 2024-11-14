@@ -17,6 +17,8 @@
   --clr-bg-sidebar:  #ffffff69;
   --clr-bg-header: #fff;
 
+  --box-shadow: 0 0 10px #3333333a;
+
   --clr-gradient: linear-gradient(to top, rgba(99, 101, 241, 0.1), rgba(219, 70, 239, 0.05) 42%, rgba(241, 244, 253, 0.07) 83%  );
   --container-padding: 1rem;
   --transition-time: all 0.2s;
@@ -48,6 +50,8 @@ html {
   --clr-white: #ffffff ;
   --clr-bg-sidebar:  #202020b6;
   --clr-bg-header: #242222;
+
+  --box-shadow: 0 0 10px #fafafa3c;
 
 }
 
@@ -520,7 +524,7 @@ header .container {
       width: 100%;
       background-color: var(--clr-bg-white);
       border-radius: .8rem;
-      box-shadow: 0 0 10px #3333333a;
+      box-shadow: var(--box-shadow);
       overflow: hidden;
 
       h3 {
@@ -1276,9 +1280,6 @@ footer {
       position: absolute;
       top: 3rem;
       right: 0;
-      background-color: var(--clr-bg-white);
-      border-radius: .8rem;
-      box-shadow: 0 0 10px #3333333a;
 
       h3 {
           font-size: 2rem;
