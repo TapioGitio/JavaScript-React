@@ -34,7 +34,7 @@ const ContactHeader = () => {
                     </div>
                     <div>
                         <h3 className="mb-1">Careers</h3>
-                        <p className="mb-1">Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.</p>
+                        <p className="mb-1">At Silicon, we believe that our people are our greatest asset. We’re on a mission to revolutionize the market.</p>
                         <button className="btn">Send an application
                             <i className="fa-solid fa-arrow-right"></i>
                         </button>
