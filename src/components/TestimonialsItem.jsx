@@ -21,9 +21,11 @@ const showRating = (rating) => {
 
   return (
     <div className="rev-container">
+
         <div className="quotes">
             <img src="./images/quotes-icon.svg"/>
         </div>
+        
         <div className="img-container">
             {showRating(item.starRating)}
         </div>
