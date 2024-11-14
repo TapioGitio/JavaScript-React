@@ -9,7 +9,6 @@ const ContactHeader = () => {
             <nav aria-label="Navigation breadcrumb">
                 <ol className="breadcrumb mb-1">
                     <li><NavLink to={'/'}><i className="fa-solid fa-house"></i> Home</NavLink></li>
-                    <span></span>
                     <li><NavLink to={'/contacts'}>Contact</NavLink></li>
                 </ol>
             </nav>
