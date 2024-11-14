@@ -1568,7 +1568,7 @@ footer {
       padding: 2rem;
       background-color: var(--clr-bg-white);
       border-radius: .8rem;
-      box-shadow: 0 0 10px #33333313;
+      box-shadow: var(--box-shadow);
 
       .quotes {
           box-shadow: 0 0 10px #33333313;;
