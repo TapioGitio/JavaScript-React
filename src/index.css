@@ -1340,6 +1340,8 @@ footer {
       .map iframe {
           height: 65%;
           width: 50%;
+          box-shadow: var(--box-shadow);
+          border: none;
 
           position: absolute;
           left: 0;
