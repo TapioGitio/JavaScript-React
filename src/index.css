@@ -571,7 +571,7 @@ header .container {
     /* MAP SECTION START */
     .map-page {
         padding-top: 4rem;
-
+        background-color: var(--clr-bg-header);
     }
 
     .map {
@@ -995,7 +995,7 @@ header .container {
 
 
 footer {
-
+  background-color: var(--clr-bg-white);
   padding: 1rem;
   .container {
       display: flex;
@@ -1324,10 +1324,8 @@ footer {
   /* CONTACT PAGE ENDS */
   /* MAP PAGE START */
   .map-page {
-
       padding-top: 14rem;
       padding-bottom: 4rem;
-      background-color: var(--clr-bg-white);
 
 
       .container {
