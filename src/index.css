@@ -1338,6 +1338,7 @@ footer {
       .map {
           display: block;
           padding-bottom: 60%;
+          width: 50%;
       }
       .map iframe {
           height: 65%;
