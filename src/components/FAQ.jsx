@@ -82,7 +82,7 @@ useEffect(() => {
 
                 {error && <div className='error txt-center'> {error}</div>}
                 {storeFaq.map((item) => (
-                    <FAQitems key={item.id} item={item} isOpen={isOpen === item.id} onToggle={() => togglePanel(item.id)} />
+                    <FAQitems key={item.id} FAQ={item} isOpen={isOpen === item.id} onToggle={() => togglePanel(item.id)} />
                 ))}
                 
             </div>

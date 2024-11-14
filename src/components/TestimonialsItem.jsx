@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TestimonialsItem = ({item}) => {
+const TestimonialsItem = ({ testimonial }) => {
 
 
 const showRating = (rating) => {
@@ -27,18 +27,18 @@ const showRating = (rating) => {
         </div>
         
         <div className="img-container">
-            {showRating(item.starRating)}
+            {showRating(testimonial.starRating)}
         </div>
 
         <div className="rev-text">
-            <p>{item.comment}</p>
+            <p>{testimonial.comment}</p>
         </div>
 
         <div className="rev-fan">
-            <img src={item.avatarUrl} alt={`Picture of: ${item.author}`}/>
+            <img src={testimonial.avatarUrl} alt={`Picture of: ${testimonial.author}`}/>
             <div className="rev-name">
-                <p className="rev-1">{item.author}</p>
-                <p className="rev-2">{item.jobRole}</p>
+                <p className="rev-1">{testimonial.author}</p>
+                <p className="rev-2">{testimonial.jobRole}</p>
             </div>
         </div>
 
