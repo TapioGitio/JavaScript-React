@@ -10,19 +10,19 @@ import Contact from '../components/Contact'
 import NewsLetter from '../components/NewsLetter'
 
 function Home() {
-  return (
-    <>
-      <MainSection/>
-      <Brands/>
-      <Features />
-      <Carousel/>
-      <ShowCase/>
-      <Testimonials/>
-      <FAQ/>
-      <Contact/>
-      <NewsLetter/>
-  </>
-  )
+    return (
+      <>
+          <MainSection/>
+          <Brands/>
+          <Features />
+          <Carousel/>
+          <ShowCase/>
+          <Testimonials/>
+          <FAQ/>
+          <Contact/>
+          <NewsLetter/>
+      </>
+    )
 }
 
 export default Home

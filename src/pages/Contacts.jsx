@@ -4,12 +4,12 @@ import ContactMap from '../components/ContactMap'
 
 
 const Contacts = () => {
-  return (
-    <>
-      <ContactHeader />
-      <ContactMap />
-    </>
-  )
+    return (
+      <>
+        <ContactHeader />
+        <ContactMap />
+      </>
+    )
 }
 
 export default Contacts
