@@ -30,10 +30,10 @@ const ContactMap = () => {
 
             <div className="socials">
               <div className="icon-container">
-                <img src="/images/facebook.svg" alt="" />
-                <img src="/images/twitter.svg" alt="" />
-                <img src="/images/camera.svg" alt="" />
-                <img src="/images/youtube.svg" alt="" />
+                <img src="/images/facebook.svg" alt="facebook-logo" />
+                <img src="/images/twitter.svg" alt="twitter-logo" />
+                <img src="/images/camera.svg" alt="camera-logo" />
+                <img src="/images/youtube.svg" alt="youtube-logo" />
               </div>
             </div>
             
