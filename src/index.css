@@ -995,7 +995,6 @@ header .container {
 
 
 footer {
-  background-color: var(--clr-bg-white);
   padding: 1rem;
   .container {
       display: flex;
