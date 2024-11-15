@@ -33,6 +33,7 @@ useEffect(() => {
     htmlElement.style.colorScheme = 'light'
     localStorage.setItem('theme', 'light')
   }
+  
 }, [darkTheme])
 
 const toggleDark = () => {
