@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import Darkmode from './Darkmode'
 import { Link, NavLink} from 'react-router-dom'
+import Darkmode from './Darkmode'
 import SideBar from './SideBar'
 
 function Header() {
   
 const [isOpen, setIsOpen] = useState(false)
+const [imageSource, setImageSource] = useState('')
 
-const [DarkTheme, setDarkTheme] = useState(() => {
+const [darkTheme, setDarkTheme] = useState(() => {
+  
   const savedTheme = localStorage.getItem('theme')
   return savedTheme === 'dark'
 })
@@ -18,31 +20,35 @@ useEffect(() => {
     
   const htmlElement= document.documentElement;
 
-  if(DarkTheme) {
+  if(darkTheme) {
+
+    setImageSource('./images/silicon-icon-dark.svg') 
     htmlElement.classList.add('dark')
     htmlElement.style.colorScheme = 'dark'
     localStorage.setItem('theme', 'dark')
-
   } else {
+
+    setImageSource('./images/silicon-icon.svg') 
     htmlElement.classList.remove('dark')
     htmlElement.style.colorScheme = 'light'
     localStorage.setItem('theme', 'light')
   }
-}, [DarkTheme])
+}, [darkTheme])
 
 const toggleDark = () => {
-    setDarkTheme(DarkTheme => !DarkTheme)
+    setDarkTheme(darkTheme => !darkTheme)
 }
 
 const toggleSidebar = () => {
     setIsOpen(!isOpen)
 }
 
+
   return (
     <header>
         <div className="container">
 
-            <Link id="logo" to={'/'}><img src="images/silicon-icon.svg" alt="Silicon logo" /></Link>
+            <Link id="logo" to={'/'}><img src= {imageSource} alt="Silicon logo" /></Link>
 
             <nav className="navbar">
                 <NavLink className="nav-link" to={'/contacts'}>Contact</NavLink>
@@ -51,7 +57,7 @@ const toggleSidebar = () => {
             </nav>
 
             <div>
-                <Darkmode DarkTheme={DarkTheme} toggleDark={toggleDark}/>
+                <Darkmode darkTheme={darkTheme} toggleDark={toggleDark}/>
             </div>
 
             <a id="auth-signin" href="#" className="btn-primary">
