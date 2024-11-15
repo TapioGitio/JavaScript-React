@@ -33,7 +33,7 @@ useEffect(() => {
     htmlElement.style.colorScheme = 'light'
     localStorage.setItem('theme', 'light')
   }
-  
+
 }, [darkTheme])
 
 const toggleDark = () => {
@@ -54,7 +54,6 @@ const toggleSidebar = () => {
             <nav className="navbar">
                 <NavLink className="nav-link" to={'/contacts'}>Contact</NavLink>
                 <a className="nav-link" href="#ft">Features</a>
-                
             </nav>
 
             <div>
