@@ -64,7 +64,7 @@ const ContactForm = () => {
     
     e.preventDefault()
 
-
+    
       if(!validateInputs()) return
       
       try {

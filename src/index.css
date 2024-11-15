@@ -1036,6 +1036,11 @@ footer {
     z-index: 999;
   }
 
+  .map-group {
+    display: flex;
+    justify-content: space-around;
+  }
+
   header .container {
       gap: 3rem;
 
@@ -1346,6 +1351,10 @@ footer {
           position: absolute;
           left: 0;
           top: 0;
+      }
+
+      .map-group {
+        flex-direction: column;
       }
       
       .map-info {

@@ -12,20 +12,21 @@ const ContactMap = () => {
 
           <div className="map-info">
 
-            <div className="map-1">
-              <h2 className="mb-1">Medical Center 1</h2>
-              <p className="mb-1"><i className="fa-solid fa-location-dot"></i>8600 Old Georgetown Rd, Bethesda</p>
-              <p className="mb-1"><i className="fa-solid fa-phone"></i>(406) 555-0120</p>
-              <p><i className="fa-solid fa-clock"></i><b>Mon – Fri</b>: 9:00 am – 22:00 am </p>
-              <p className="m-l"><b> Sat – Sun</b>: 9:00 am – 20:00 am</p>
-            </div>
-
-            <div className="map-2">
-              <h2 className="mb-1">Medical Center 2</h2>
-              <p className="mb-1"><i className="fa-solid fa-location-dot"></i>2464 Royal Ln. Mesa,New Jersey 45463</p>
-              <p className="mb-1"><i className="fa-solid fa-phone"></i>(406) 544-0123</p>
-              <p><i className="fa-solid fa-clock"></i><b>Mon – Fri</b>: 9:00 am – 22:00 am </p>
-              <p className="m-l"><b> Sat – Sun</b>: 9:00 am – 20:00 am</p>
+            <div className="map-group">
+              <div className="map-1">
+                <h2 className="mb-1">Medical Center 1</h2>
+                <p className="mb-1"><i className="fa-solid fa-location-dot"></i>8600 Old Georgetown Rd, Bethesda</p>
+                <p className="mb-1"><i className="fa-solid fa-phone"></i>(406) 555-0120</p>
+                <p><i className="fa-solid fa-clock"></i><b>Mon – Fri</b>: 9:00 am – 22:00 am </p>
+                <p className="m-l"><b> Sat – Sun</b>: 9:00 am – 20:00 am</p>
+              </div>
+              <div className="map-2">
+                <h2 className="mb-1">Medical Center 2</h2>
+                <p className="mb-1"><i className="fa-solid fa-location-dot"></i>2464 Royal Ln. Mesa,New Jersey 45463</p>
+                <p className="mb-1"><i className="fa-solid fa-phone"></i>(406) 544-0123</p>
+                <p><i className="fa-solid fa-clock"></i><b>Mon – Fri</b>: 9:00 am – 22:00 am </p>
+                <p className="m-l"><b> Sat – Sun</b>: 9:00 am – 20:00 am</p>
+              </div>
             </div>
 
             <div className="socials">
