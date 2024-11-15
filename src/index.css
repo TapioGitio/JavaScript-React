@@ -10,6 +10,7 @@
   --clr-gray800: #33354D;
   --clr-gray900: #0B0F19;
   --clr-succes: #22C55E;
+  --clr-error: #b22222;
 
   --clr-white: #fff ;
   --clr-bg-white: #fff;
@@ -44,6 +45,7 @@ html {
   --clr-gray800: #fff;
   --clr-gray900: #fff;
   --clr-succes: #22C55E;
+  --clr-error: #ff0000;
 
   --clr-bg-white: #353535;
   --clr-bg-btn-white: #dark;
@@ -78,7 +80,7 @@ option {
 }
 
 .error {
-    color: firebrick;
+    color: var(--clr-error);
 }
 .success {
     color: rgb(34, 178, 70);
